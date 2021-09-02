@@ -28,6 +28,10 @@ namespace Lesson1
             {
                 Console.WriteLine("Строка не является числом");
             }
+
+            //Задание 3
+            Console.WriteLine(FibonachiRec(10));
+            Console.WriteLine(FibonachiCycle(10));
             Console.ReadLine();
         }
 
@@ -84,6 +88,22 @@ namespace Lesson1
         }
         
         //Задание 3
-
+        public static int FibonachiCycle(int n, int num1 = 0, int num2 = 1)
+        {
+            if (n <= 1) return num1;
+            int num;
+            for (int i = 2; i <= n; i++)
+            {
+                num = num1;
+                num1 = num2;
+                num2 = num2 + num;
+            }
+            return num2;
+        }
+       
+        static int FibonachiRec(int n, int num1 = 0, int num2 = 1)
+        {
+            return n == 0 ? num1 : FibonachiRec(n - 1, num2, num1 + num2);
+        }
     }
 }
