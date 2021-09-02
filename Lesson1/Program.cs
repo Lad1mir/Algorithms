@@ -10,6 +10,7 @@ namespace Lesson1
     {
         static void Main(string[] args)
         {
+            //Задание 1
             try
             {
                 int getNumber = Convert.ToInt32(Console.ReadLine());
@@ -59,5 +60,30 @@ namespace Lesson1
                 }
             }
         }
+        //Задание 2
+        public static int StrangeSum(int[] inputArray) //O(n*n*n) = O(n^3)
+        {
+            int sum = 0;
+            for (int i = 0; i < inputArray.Length; i++) //O(n)
+            {
+                for (int j =0; j < inputArray.Length; j++) //O(n)
+                {
+                    for (int k = 0; k < inputArray.Length; k++) //O(n)
+                    {
+                        int y = 0;
+                        if (j != 0)
+                        {
+                            y = k / j;
+                        }
+                        sum += inputArray[j] + i + k + j + y;
+                    }
+
+                }
+            }
+            return sum;
+        }
+        
+        //Задание 3
+
     }
 }
